@@ -45,7 +45,7 @@ public APLRes AskPluginLoad2()
 public Plugin myinfo =
 {
 	name		= "Jump effect/Эффект от прыжка",
-	version		= "1.4.0",
+	version		= "1.4.1",
 	description	= "Волны от прыжков",
 	author		= "Nek.'a 2x2 | ggwp.site , by Grey83",
 	url			= "https://ggwp.site/"
@@ -161,7 +161,7 @@ void TE_SendTo(int iTeam)
 {
 	int[] iClients = new int[MaxClients];
 	int num;
-	for(int i = 1; i <= MaxClients; i++) if(IsClientInGame(i) && GetClientTeam(i) == iTeam)
+	for(int i = 1; i <= MaxClients; i++) if(IsClientInGame(i) && !IsFakeClient(i) && GetClientTeam(i) == iTeam)
 	{
 		iClients[num++] = i;
 	}
